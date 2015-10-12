@@ -1,0 +1,125 @@
+\documentclass[11pt]{beamer}
+\usetheme{DBIL}
+
+%% Packages
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+%% Title Page Parameters
+\title{The 3rd Bioimage Analysis Summer School}
+\subtitle{Modalities, Methodologies and Clinical Research}
+\date{\today}
+\author{Chas Nelson}
+\institute{School of Engineering and Computing Sciences, Durham University}
+\def\Bodies{DBIL}%Institutes and funding bodies for title page footer
+
+\begin{document}
+
+%% Photo Slide
+\makephoto{city}
+
+%% Title Slide
+\maketitle
+
+%% Contents Slide
+\begin{frame}
+  \frametitle{Table of Contents}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Introduction}
+%Introduction Slide
+\begin{frame}
+  \frametitle{Introduction}
+  \begin{itemize}
+  \item The week was heavily focused on clinical imaging and as such has a focus on medical image analysis tools and techniques.
+  \item Each day was split into two halfs: in the morning there was a technique talk and in the afternoon there were two or three application talks.
+  \item In general, the technical talks were quite technical and perhaps a bit too specific for my liking; the application talks were much more interesting but were still aimed at a very technical level.
+    \end{itemize}
+\end{frame}
+
+\section{Day-by-day}
+\subsection{Monday}
+\begin{frame}{Monday}
+  Because of travel arrangements I missed Monday morning, which focuses on biomedical image segmentation.
+  
+  The afternoon had a Cardiac Imaging focus looking at deformable models and blood flow analysis (Metaxas), probabilistic modelling (Wells) and sparsity-based approaches (Axel).
+\end{frame}
+\begin{frame} 
+  \begin{itemize}
+  \item Metaxas' talk was probably the most of interest to me as he has a background in using deformable models (physics-based) in image processing and medical imaging.
+  \item Wells's focus is fMRI [adaptive] segmentation and registration based on mutual information. 
+  \item Axel's research focusses on movement in MRI: accounting for background movement, e.g. breathing, measuring movement of interest, e.g. blood flow.
+  \end{itemize}
+\end{frame}
+
+\subsection{Tuesday}
+\begin{frame}{Tuesday}
+	Tuesday morning focussed on deep learning using structured models. Urtasun started by explaining supervised models in structured learning and then went on to look at 'deep' learning.
+	Deep learning uses a composite of simpler learning functions to build a more complex, multi-layer learning structure; this builds up a neural network.
+	The afternoon looked at using models in medical imaging including using a predetermined growth model to base treatment patterns for brain tumours.
+\end{frame}
+\begin{frame} 
+  \begin{itemize}
+  \item Urtasan's research focusses on statistical learning in computer vision, based on her publications and invited lectures she is clearly worth a look for those interested in machine learning in our field.
+  \item Duncan's research focusses on using models with statistical learning to extract objects from MRI images.
+  \item Delingette's talk focused on developing personalised tumour growth models for tumour treatment.
+  \end{itemize}
+\end{frame}
+
+\subsection{Wednesday}
+\begin{frame}{Wednesday}
+	Unfortunately, I  prepared these slides so far after the event that I don't seem to remember anything about the Wednesday talks except one of the speakers seeming to be a bit more of a clown than a researcher...?
+\end{frame}
+
+\subsection{Thursday}
+\begin{frame}{Thursday}
+	Thursday morning was meant to be continuous optimisation; however, was given a very strong focus on convex only.
+	Thursday afternoon, however, was very interesting. The focus was on registration but the talks by Pluim and Christensen were both very interesting.
+\end{frame}
+\begin{frame} 
+  \begin{itemize}
+  \item Chambolle has a focus on optimisation and free boundary problems.
+  \item Ourselin has a very whole-brain fMRI focus, his direction seems to be to develop image-based biomarkers for neurological diseases.
+  \item Pluim did the best talk of the week. Whilst she discussed the image registration techniques that her group was developing she kept coming back to the idea of how we validate registration and whether or not the registration community has the right thinking.
+  \item Christensen spoke about lung image registration based on vague segmentation of the lung branching structure.
+  \end{itemize}
+\end{frame}
+
+\subsection{Friday}
+\begin{frame}{Friday}
+	The morning began with Fletcher talking about modelling of manifold data in neuroimaging.
+	The afternoon focussed on connectomics (Thiran), cancer imaging (Schnabel) and random forests (Glocker). All three talks were interesting and the researchers well worth a look into.
+\end{frame}
+\begin{frame} 
+  \begin{itemize}
+  \item Fletcher's interests seem  to lie in using manifold metrics, particularly Reimannian, to analysis structures involved in degenerative neurological diseases.
+  \item Thiran 's talk focussed on diffusian MRI imaging and using this modalities to segment structures of interest.
+  \item Schnabel's focus is on registration and cancer imaging anad analysis. In the talk she focussed on a specific method for creating 'superpixels/voxels'.
+  \item Glocker gave a very interesting talk documenting he and his group's success at using random forests to segment medical images, in particular, one of their systems was able to segment each vertebrate and correctly label them.
+  \end{itemize}
+\end{frame}
+
+\section{Interesting Research}
+\begin{frame}{Interesting Research}
+	The concept of 'superpixels' is something I had never seen before. It struck me that a very obvious approach to segmentation would be a layering of superpixel techniques to go from small, isotropic pixels, to clustered groups of 'objects'.
+	The random forest techniques being used by Glocker were also very interesting and showed that, whilst it seems to be going out of favour for neural networks, random forests may still have some application for post-hoc analysis.
+\end{frame}
+
+\section{Interesting Questions}
+\begin{frame}{Interesting Questions}
+	\begin{itemize}
+	\item How do you validate a result?
+	\item Do your 'human experts' know what they're doing?
+	\item Registration, how important and useful is it?
+	\end{itemize}
+\end{frame}
+
+\section{Summary}
+\begin{frame}{Summary}
+	The summer school was definetely aimed at the more Clinical side (as expected); however, a lack of generality of the 'tutorial' sessions seemed to alienate not just the bioimaging researchers there but also a lot of the medical researchers. On the plus side, we now have a latex version of the Durham presentation template :-).
+\end{frame}
+\plain{Questions?}
+\end{document}

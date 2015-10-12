@@ -1,0 +1,117 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamercolorthemeDBIL}
+
+\pgfkeys{
+  /DBIL/color/block/.cd,
+    .is choice,
+    transparent/.code=\@DBIL@block@transparent,
+    fill/.code=\@DBIL@block@fill,
+}
+
+\pgfkeys{
+  /DBIL/color/background/.cd,
+    .is choice,
+    dark/.code=\@DBIL@colors@dark,
+    light/.code=\@DBIL@colors@light,
+}
+
+\newcommand{\@DBIL@color@setdefaults}{
+  \pgfkeys{/DBIL/color/.cd,
+    background=light,
+    block=transparent,
+  }
+}
+
+\definecolor{palatine}{HTML}{7E317B}
+
+\newcommand{\@DBIL@colors@dark}{
+  \setbeamercolor{normal text}{%
+    fg=white,
+    bg=palatine
+  }
+}
+
+\newcommand{\@DBIL@colors@light}{
+  \setbeamercolor{normal text}{%
+    fg=palatine,
+    bg=white,
+  }
+}
+
+\setbeamercolor{palette primary}{%
+  fg=white,
+  bg=palatine,
+}
+
+\setbeamercolor{titlelike}{%
+  fg=white,
+}
+
+\setbeamercolor{frametitle}{%
+  fg=palatine,
+  bg=,
+}
+
+\setbeamercolor{section in toc}{%
+	fg=palatine,
+}
+
+\setbeamercolor{item}{%
+	fg=palatine,
+}
+
+\setbeamercolor{caption name}{%
+	fg=palatine,
+}
+
+\setbeamercolor{bibliography entry author}{%
+	fg=palatine,
+}
+
+\setbeamercolor{bibliography entry location}{%
+	fg=palatine,
+}
+
+\setbeamercolor{bibliography entry title}{%
+	fg=palatine,
+}
+
+\newcommand{\@DBIL@block@transparent}{
+  \setbeamercolor{block title}{use=normal text, parent=normal text}
+}
+
+\newcommand{\@DBIL@block@fill}{
+  \setbeamercolor{block title}{%
+    use=normal text,
+    fg=normal text.fg,
+    bg=normal text.bg!80!fg
+  }
+}
+
+\setbeamercolor{block title alerted}{%
+    use={block title, alerted text},
+    bg=block title.bg,
+    fg=alerted text.fg
+}
+
+\setbeamercolor{block title example}{%
+    use={block title, example text},
+    bg=block title.bg,
+    fg=example text.fg
+}
+
+\setbeamercolor{block body alerted}{use=block body, parent=block body}
+\setbeamercolor{block body example}{use=block body, parent=block body}
+\setbeamercolor{block body}{
+  use={block title, normal text},
+  bg=block title.bg!50!normal text.bg
+}
+
+\setbeamercolor{footnote}{fg=normal text.fg!90}
+\setbeamercolor{footnote mark}{fg=.}
+
+\@DBIL@color@setdefaults
+
+\ProcessPgfPackageOptions{/DBIL/color}
+\mode<all>
+\endinput
