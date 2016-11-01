@@ -166,6 +166,9 @@
 
 %% Contents
 \setbeamertemplate{section in toc}[sections numbered]
+% \makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
+% \makeatother
 
 %% Bibliography
 \setbeamertemplate{bibliography item}{
