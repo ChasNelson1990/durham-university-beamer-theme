@@ -62,11 +62,11 @@
 		}%
 		\newcommand{\numLogo}{\the\value{numLogo}}
 		\newcommand{\wdLogo}{((\paperwidth-2em)/\numLogo) - (2*0.1em)}
-		
 		\begin{LogoBar}
 			\foreach \body in \Bodies{%
 				\node[left=0.05em of Anchor, anchor=east] (\body) {
 					\includegraphics[width=5em,height=3em,keepaspectratio]{logo/\body}
+					\includegraphics[width=5em,height=3em,keepaspectratio]{\body}
 				};
 				\node[left=0.05em of \body] (Anchor) {};
 			}%
@@ -89,48 +89,50 @@
 	}
 	% People
 	\begin{frame}{\usebeamercolor[fg]{title}{Acknowledgments}}
+	\vspace*{-10pt}
 		\begin{columns}[t]
-	      \begin{column}{0.3\textwidth}
-            \usebeamercolor[fg]{title}%
-	      	The group:
-	      	\begin{itemize}
-		      	\foreach \member in \Group{%
-					\item \member%
-				}%
-			\end{itemize}
-	      \end{column}
-	      \begin{column}{0.3\textwidth}
-            \usebeamercolor[fg]{title}%
-            Collaborators:
+	    \begin{column}{0.3\textwidth}
+        \usebeamercolor[fg]{title}%
+	      The group:
+	      \begin{itemize}
+		      \foreach \member in \Group{%
+						\item \member%
+					}%
+				\end{itemize}
+	    \end{column}
+	    \begin{column}{0.3\textwidth}
+          \usebeamercolor[fg]{title}%
+          Collaborators:
 	      	\begin{itemize}
 		      	\foreach \person in \Collaborators{%
-					\item \person%
-				}%
-			\end{itemize}
-	      \end{column}
-	      \begin{column}{0.3\textwidth}
-			\usebeamercolor[fg]{title}%
-			Thanks to:
-	      	\begin{itemize}
-		      	\foreach \thing in \Thanks{%
-					\item \thing%
-				}%
-			\end{itemize}
-	      \end{column}
-   	    \end{columns}
-	    %% Logo Bar
-  		\newcounter{numLogoA}
+							\item \person%
+						}%
+					\end{itemize}
+	    \end{column}
+	    \begin{column}{0.3\textwidth}
+				\usebeamercolor[fg]{title}%
+				Thanks to:
+	      \begin{itemize}
+		      \foreach \thing in \Thanks{%
+						\item \thing%
+					}%
+				\end{itemize}
+	  	\end{column}
+   	\end{columns}
+
+	  %% Logo Bar
+  	\newcounter{numLogoA}
 		\setcounter{numLogoA}{0}%
 		\foreach \body in \Bodies{%
 			\stepcounter{numLogoA}%
 		}%
 		\newcommand{\numLogoA}{\the\value{numLogoA}}
 		\newcommand{\wdLogoA}{((\paperwidth-2em)/\numLogoA) - (2*0.1em)}
-		
+
 		\begin{LogoBar}
 			\foreach \body in \Bodies{%
 				\node[left=0.05em of Anchor, anchor=east] (\body) {
-					\includegraphics[width=5em,height=3em,keepaspectratio]{logo/\body}
+					\includegraphics[width=5em,height=3em,keepaspectratio]{\body}
 				};
 				\node[left=0.05em of \body] (Anchor) {};
 			}%
